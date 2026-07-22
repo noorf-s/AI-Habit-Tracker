@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import { NavLink } from 'react-router-dom'
 import Modal from '../components/ui/Modal'
 import StatCard from '../components/ui/StatCard'
 import HabitCard from '../components/habit/HabitCard'
@@ -230,12 +231,35 @@ const Dashboard = () => {
           <div className="sidebar-brand">
             <NorthLogo showText={true} />
           </div>
-          <nav className="sidebar-nav">
-            <a className="active" href="#">Dashboard</a>
-            <a href="#">Habits</a>
-            <a href="#">Insights</a>
-            <a href="#">Profile</a>
-          </nav>
+        <nav className="sidebar-nav">
+  <NavLink
+    to="/dashboard"
+    className={({ isActive }) => (isActive ? 'active' : '')}
+  >
+    Dashboard
+  </NavLink>
+
+  <NavLink
+    to="/habits"
+    className={({ isActive }) => (isActive ? 'active' : '')}
+  >
+    Habits
+  </NavLink>
+
+  <NavLink
+    to="/insights"
+    className={({ isActive }) => (isActive ? 'active' : '')}
+  >
+    Insights
+  </NavLink>
+
+  <NavLink
+    to="/profile"
+    className={({ isActive }) => (isActive ? 'active' : '')}
+  >
+    Profile
+  </NavLink>
+</nav>
         </div>
       </aside>
 

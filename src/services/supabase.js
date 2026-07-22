@@ -82,6 +82,12 @@ export const signOutSession = async () => {
   return supabase.auth.signOut()
 }
 
+export const resetPassword = async (email) => {
+  return supabase.auth.resetPasswordForEmail(email, {
+    redirectTo: window.location.origin
+  })
+}
+
 export const fetchHabitsForUser = async (userId) => {
   if (!userId) return []
 

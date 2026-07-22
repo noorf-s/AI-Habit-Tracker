@@ -2,7 +2,11 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Button from '../components/ui/Button'
 import Input from '../components/ui/Input'
-import { getFriendlyErrorMessage, signInWithPassword } from '../services/supabase'
+import {
+  getFriendlyErrorMessage,
+  signInWithPassword,
+  resetPassword
+} from '../services/supabase'
 
 const Login = () => {
   const navigate = useNavigate()
@@ -103,9 +107,32 @@ const Login = () => {
               <input type="checkbox" />
               <span>Remember me</span>
             </label>
-            <a className="text-link" href="#forgot-password">
-              Forgot Password?
-            </a>
+          <button
+  type="button"
+  className="text-link"
+  onClick={async () => {
+    if (!form.email.trim()) {
+      setErrors((current) => ({
+        ...current,
+        email: 'Please enter your email first.'
+      }))
+      return
+    }
+
+    const { error } = await resetPassword(form.email.trim())
+
+    if (error) {
+      setErrors((current) => ({
+        ...current,
+        submit: getFriendlyErrorMessage(error)
+      }))
+    } else {
+      setStatusMessage('Password reset email sent. Please check your inbox.')
+    }
+  }}
+>
+  Forgot Password?
+</button>
           </div>
 
           {errors.submit && <p className="error-text">{errors.submit}</p>}

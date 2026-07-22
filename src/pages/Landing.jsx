@@ -3,23 +3,23 @@ import NorthLogo from '../components/ui/NorthLogo'
 
 const features = [
   {
-    title: 'Build routines that quietly move you forward.',
-    description: 'Create habits that feel natural to keep, with gentle structure and room to breathe.'
+    title: 'A calm system for building momentum.',
+    description: 'Turn daily intentions into a measured routine with elegant structure and thoughtful pacing.'
   },
   {
-    title: 'See your steadiness clearly.',
-    description: 'A calm view of your weekly progress helps you notice what is already working.'
+    title: 'See your progress as it evolves.',
+    description: 'Follow streaks, completions, and quiet wins through a refined dashboard designed for focus.'
   },
   {
-    title: 'Stay intentional.',
-    description: 'Thoughtful reflections make it easier to continue with clarity and care.'
+    title: 'Stay grounded in the work.',
+    description: 'Reduce friction and keep your habits visible through a product experience that feels precise and calm.'
   }
 ]
 
-const stats = [
-  { value: '12k+', label: 'steady users' },
-  { value: '82%', label: 'weekly consistency' },
-  { value: '4.9/5', label: 'average care' }
+const insights = [
+  { label: 'Habit flow', value: 'Measured and intentional' },
+  { label: 'Momentum', value: 'Built in layers' },
+  { label: 'Experience', value: 'Quietly premium' }
 ]
 
 const Landing = () => {
@@ -56,28 +56,28 @@ const Landing = () => {
       <main className="landing-main" id="top">
         <section className="hero-section" id="get-started">
           <div className="hero-copy">
-            <p className="hero-tagline">Find your direction</p>
+            <p className="hero-tagline">A sharper way to keep going</p>
             <h1>
-              Small actions shape
-              <span>meaningful progress.</span>
+              Build a rhythm that feels
+              <span>as refined as your work.</span>
             </h1>
             <p className="hero-text">
-              North helps you stay steady, notice your progress, and build routines that quietly carry you forward.
+              North brings your habits into a premium, focused experience designed for steady growth, elegant clarity, and long-term momentum.
             </p>
 
             <div className="cta-group">
               <Link className="button primary" to="/signup">
-                Get Started
+                Begin your routine
               </Link>
               <button type="button" className="button secondary" onClick={scrollToFeatures}>
-                Learn More
+                Explore the experience
               </button>
             </div>
 
             <div className="hero-badges">
-              <span>Daily check-ins</span>
-              <span>Streak tracking</span>
-              <span>Clear summaries</span>
+              <span>Refined habit tracking</span>
+              <span>Thoughtful progress cues</span>
+              <span>Quiet, focused design</span>
             </div>
           </div>
 
@@ -85,41 +85,41 @@ const Landing = () => {
             <div className="hero-card main-card" aria-label="North preview">
               <div className="panel-top">
                 <div>
-                  <p className="panel-label">This week</p>
-                  <strong>7 day streak</strong>
+                  <p className="panel-label">Current focus</p>
+                  <strong>Steady growth</strong>
                 </div>
-                <span className="status-pill">On track</span>
+                <span className="status-pill">In motion</span>
               </div>
 
               <div className="panel-list">
                 <div className="habit-item">
                   <span className="dot" />
-                  <span>Morning stretch</span>
+                  <span>Morning reflection</span>
                 </div>
                 <div className="habit-item">
                   <span className="dot" />
-                  <span>Read 20 minutes</span>
+                  <span>Deep work block</span>
                 </div>
                 <div className="habit-item">
                   <span className="dot" />
-                  <span>Plan tomorrow</span>
+                  <span>Evening reset</span>
                 </div>
               </div>
 
               <div className="panel-footer">
                 <div>
-                  <p className="panel-label">Completion</p>
-                  <strong>82%</strong>
+                  <p className="panel-label">Momentum</p>
+                  <strong>8 habits</strong>
                 </div>
-                <div className="mini-bar">
-                  <span></span>
+                <div className="mini-ring" aria-hidden="true">
+                  <span />
                 </div>
               </div>
             </div>
 
             <div className="hero-card note-card">
               <p className="note-label">Editorial note</p>
-              <p className="quote-text">Quiet consistency creates remarkable change.</p>
+              <p className="quote-text">Consistency becomes elegant when it is designed with care.</p>
             </div>
           </div>
         </section>
@@ -127,7 +127,7 @@ const Landing = () => {
         <section className="features-section" id="features">
           <div className="section-heading">
             <p className="eyebrow">Made for steady days</p>
-            <h2>Gentle structure for the life you are building.</h2>
+            <h2>Designed to make intention feel effortless.</h2>
           </div>
 
           <div className="feature-grid">
@@ -142,7 +142,7 @@ const Landing = () => {
 
         <section className="stats-section" id="about">
           <div className="stats-card">
-            {stats.map((item) => (
+            {insights.map((item) => (
               <div className="stat-item" key={item.label}>
                 <strong>{item.value}</strong>
                 <span>{item.label}</span>
