@@ -8,6 +8,8 @@ import Insights from './pages/Insights'
 import Profile from './pages/Profile'
 import './App.css'
 
+// Login feature development
+
 function App() {
   return (
     <Router>
